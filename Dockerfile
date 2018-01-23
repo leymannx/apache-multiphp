@@ -40,8 +40,12 @@ RUN a2enmod proxy_fcgi rewrite
 
 # Set repository.
 RUN apt-get update && \
-	apt-get install -y apt-transport-https ca-certificates curl gnupg --no-install-recommends && \
-	rm -rf /var/lib/apt/*
+    apt-get install -y --no-install-recommends \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg && \
+    rm -rf /var/lib/apt/*
 RUN curl https://packages.sury.org/php/apt.gpg | apt-key add -
 RUN echo 'deb https://packages.sury.org/php/ stretch main' > /etc/apt/sources.list.d/deb.sury.org.list
 
@@ -49,28 +53,35 @@ RUN echo 'deb https://packages.sury.org/php/ stretch main' > /etc/apt/sources.li
 # install PHP 7.1
 RUN \
     apt-get update && \
-	apt-get install -y --no-install-recommends \
-	php7.1 \
-	php7.1-cli \
-	php7.1-fpm && \
-	rm -rf /var/lib/apt/lists/*
+    apt-get install -y --no-install-recommends \
+    php7.1 \
+    php7.1-cli \
+    # php7.1-curl \
+    php7.1-fpm \
+    # php7.1-mbstring \
+    # php7.1-mcrypt \
+    php7.1-mysqlnd \
+    # php7.1-zip \
+    php7.1-gd && \
+    # php7.1-xml && \
+    rm -rf /var/lib/apt/lists/*
 
 
 # install PHP 5.6
 RUN \
     apt-get update && \
-	apt-get install -y --no-install-recommends \
-	php5.6 \
-	php5.6-cli \
-	# php5.6-dev \
-	php5.6-fpm && \
-	# php5.6-mbstring \
-	# php5.6-mcrypt \
-	# php5.6-mysql \
-	# php5.6-zip \
-	# php5.6-gd \
-	#php5.6-xml && \
-	rm -rf /var/lib/apt/lists/*
+    apt-get install -y --no-install-recommends \
+    php5.6 \
+    php5.6-cli \
+    php5.6-curl \
+    php5.6-fpm \
+    php5.6-mbstring \
+    # php5.6-mcrypt \
+    php5.6-mysqlnd \
+    # php5.6-zip \
+    php5.6-gd \
+    php5.6-xml && \
+    rm -rf /var/lib/apt/lists/*
 
 
 # Verify versions.
