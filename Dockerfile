@@ -94,9 +94,11 @@ RUN php -v
 
 
 # (Docker-specific) install supervisor so we can run everything together
-RUN apt-get update && \
-	apt-get install -y supervisor --no-install-recommends && \
-	rm -rf /var/lib/apt/lists/*
+RUN \
+    apt-get update && \
+    apt-get install -y --no-install-recommends \
+    supervisor && \
+    rm -rf /var/lib/apt/lists/*
 COPY supervisor.conf /etc/supervisor/supervisord.conf
 RUN mkdir -p /run/php
 
