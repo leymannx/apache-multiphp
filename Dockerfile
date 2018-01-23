@@ -27,15 +27,15 @@ RUN \
 # Install Apache.
 RUN \
     apt-get update && \
-	apt-get install -y --no-install-recommends \
-	apache2 && \
-	rm -rf /var/lib/apt/lists/*
+    apt-get install -y --no-install-recommends \
+    apache2 && \
+    rm -rf /var/lib/apt/lists/*
 
 
 # Configure Apache.
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 ADD 000-default.conf /etc/apache2/sites-available/000-default.conf
-RUN a2enmod proxy_fcgi
+RUN a2enmod proxy_fcgi rewrite
 
 
 # Set repository.
