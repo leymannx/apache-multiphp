@@ -79,12 +79,6 @@ RUN php -v
 # You can switch the default version using update-alternatives, just run the following command and pick the version you prefer:
 # $ update-alternatives --config php
 
-RUN mkdir /var/www/php71
-COPY index71.php /var/www/php71/index.php
-
-RUN mkdir /var/www/php56
-COPY index56.php /var/www/php56/index.php
-
 
 # (Docker-specific) install supervisor so we can run everything together
 RUN apt-get update && \
