@@ -2,7 +2,7 @@
 
 Debian 9 - Apache 2.4 - PHP 5.6 and PHP 7.1
 
-1. `$ docker run -p 8856:8856 -p 8871:8871 leymannx/apache-multiphp`
+1. `$ docker run -p 8856:8856 -p 8871:8871 leymannx/apache-multiphp:1.0`
 2. In your browser visit
    - [http://localhost:8856](http://localhost:8856) for PHP 5.6
    - [http://localhost:8871](http://localhost:8856) for PHP 7.1
