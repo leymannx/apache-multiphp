@@ -18,8 +18,10 @@ RUN sed -i "s/^exit 101$/exit 0/" /usr/sbin/policy-rc.d
 # Install tools.
 RUN \
     apt-get update && \
-	apt-get install -y nano --no-install-recommends && \
-	rm -rf /var/lib/apt/lists/*
+    apt-get install -y  --no-install-recommends \
+    mariadb-client \
+    nano && \
+    rm -rf /var/lib/apt/lists/*
 
 
 # Install Apache.
