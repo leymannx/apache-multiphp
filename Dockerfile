@@ -100,7 +100,7 @@ RUN update-alternatives --set php /usr/bin/php7.1
 RUN \
     curl -OL https://github.com/drush-ops/drush/releases/download/8.1.15/drush.phar && \
     chmod +x drush.phar && \
-    mv drush.phar /usr/local/bin/drush8
+    mv drush.phar /usr/local/bin/drush8 && \
     drush8 init -y
 
 
