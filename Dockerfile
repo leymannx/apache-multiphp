@@ -91,6 +91,40 @@ RUN php -v
 
 # You can switch the default version using update-alternatives, just run the following command and pick the version you prefer:
 # $ update-alternatives --config php
+# Composer.
+#RUN \
+#    curl -sS https://getcomposer.org/installer | php && \
+#    mv composer.phar /usr/local/bin/composer
+
+
+# Drush 8
+RUN \
+    curl -OL https://github.com/drush-ops/drush/releases/download/8.1.15/drush.phar && \
+    chmod +x drush.phar && \
+    mv drush.phar /usr/local/bin/drush8
+    drush8 init -y
+
+
+# Drush Launcher.
+RUN \
+    curl -OL https://github.com/drush-ops/drush-launcher/releases/download/0.5.1/drush.phar && \
+    chmod +x drush.phar && \
+    mv drush.phar /usr/local/bin/drush && \
+    drush self-update
+
+
+# npm
+#RUN \
+#    curl -sL https://deb.nodesource.com/setup_9.x | bash - && \
+#    apt-get update && \
+#    apt-get install -y --no-install-recommends \
+#    nodejs \
+#    build-essential && \
+#    rm -rf /var/lib/apt/lists/*
+#RUN \
+#    npm i -g gulp && \
+#    npm i -g npm@next && \
+#    npm i -g npm-cache-install
 
 
 # (Docker-specific) install supervisor so we can run everything together
