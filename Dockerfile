@@ -89,8 +89,11 @@ RUN php7.1 -v
 RUN php5.6 -v
 RUN php -v
 
-# You can switch the default version using update-alternatives, just run the following command and pick the version you prefer:
+# You can switch the default version using update-alternatives:
 # $ update-alternatives --config php
+RUN update-alternatives --set php /usr/bin/php7.1
+
+
 # Composer.
 #RUN \
 #    curl -sS https://getcomposer.org/installer | php && \
