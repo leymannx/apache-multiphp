@@ -93,7 +93,8 @@ RUN update-alternatives --set php /usr/bin/php7.1
 # Composer.
 RUN \
     curl -sS https://getcomposer.org/installer | php && \
-    mv composer.phar /usr/local/bin/composer
+    mv composer.phar /usr/local/bin/composer && \
+    composer global require hirak/prestissimo
 
 
 # Drush 8
