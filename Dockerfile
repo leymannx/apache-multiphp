@@ -91,9 +91,9 @@ RUN update-alternatives --set php /usr/bin/php7.1
 
 
 # Composer.
-#RUN \
-#    curl -sS https://getcomposer.org/installer | php && \
-#    mv composer.phar /usr/local/bin/composer
+RUN \
+    curl -sS https://getcomposer.org/installer | php && \
+    mv composer.phar /usr/local/bin/composer
 
 
 # Drush 8
@@ -113,17 +113,17 @@ RUN \
 
 
 # npm
-#RUN \
-#    curl -sL https://deb.nodesource.com/setup_9.x | bash - && \
-#    apt-get update && \
-#    apt-get install -y --no-install-recommends \
-#    nodejs \
-#    build-essential && \
-#    rm -rf /var/lib/apt/lists/*
-#RUN \
-#    npm i -g gulp && \
-#    npm i -g npm@next && \
-#    npm i -g npm-cache-install
+RUN \
+    curl -sL https://deb.nodesource.com/setup_9.x | bash - && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends \
+    nodejs \
+    build-essential && \
+    rm -rf /var/lib/apt/lists/*
+RUN \
+    npm i -g gulp && \
+    npm i -g npm@next && \
+    npm i -g npm-cache-install
 
 
 # (Docker-specific) install supervisor so we can run everything together
