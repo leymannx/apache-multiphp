@@ -61,7 +61,6 @@ RUN \
     php7.1-mbstring \
     php7.1-mcrypt \
     php7.1-mysqlnd \
-    php7.1-redis \
     php7.1-zip \
     php7.1-xml && \
     rm -rf /var/lib/apt/lists/*
@@ -79,7 +78,6 @@ RUN \
     php5.6-mbstring \
     php5.6-mcrypt \
     php5.6-mysqlnd \
-    php5.6-redis \
     php5.6-zip \
     php5.6-xml && \
     rm -rf /var/lib/apt/lists/*
