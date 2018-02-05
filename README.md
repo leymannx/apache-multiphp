@@ -8,17 +8,20 @@ Debian 9 - Apache 2.4 - PHP 5.6 and PHP 7.1
    - [http://localhost:8871](http://localhost:8856) for PHP 7.1
 3. Happy, happy!
 
-#### Drupal
+## Drupal
 
 Starting with version 0.1.5 this image is going to be drupalized to run multiple Drupal 7 and Drupal 8 projects in parallel.
 
 Following tools will also be provided:
 
 - Composer
+- Drush 8
 - Drush Launcher
 - npm
 
-#### Multiple PHP versions in parallel
+For more info see [Dockerix](https://github.com/leymannx/dockerix) on GitHub.
+
+## Multiple PHP versions in parallel
 
 This image uses Apache's [`mod_proxy_fcgi`](https://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html) and loads the right PHP version with `ProxyPassMatch`. You don't have to do anyting as I already incorporated into Apache's `000-default.conf`:
 
